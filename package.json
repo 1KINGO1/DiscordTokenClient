@@ -1,0 +1,20 @@
+{
+  "name": "discordtokenclient",
+  "version": "1.0.0",
+  "description": "A convenient utility that allows you to manage your discord account through a token",
+  "main": "index.js",
+  "scripts": {
+    "start:client": "cd ./client && npm i && npm start",
+    "start:server": "cd ./server && npm i && npm run start:dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1KINGO1/DiscordTokenClient.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1KINGO1/DiscordTokenClient/issues"
+  },
+  "homepage": "https://github.com/1KINGO1/DiscordTokenClient#readme"
+}

@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #e3b330;
+}
+#login{
+    width: 75%;
+    background-color: #181818;
+    margin: 20px auto;
+    padding: 10px 20px;
+    border-radius: 15px;
+}
+#login > h1{
+    border-bottom: 2px solid white;
+    padding: 0 0 10px 0;
+}
+.help-span > a{
+    color: rgba(236, 80, 80, 0.51);
+    text-decoration: none;
+}
+.help-span > a:hover{
+    color: rgba(236, 80, 80, 0.91);
+}
+#login-input{
+    font-size: 22px;
+    outline: none;
+    border: 0;
+    border-radius: 5px;
+    padding: 4px 4px 4px 1px;
+    background-color: rgba(255, 255, 255, 0.12);
+    width: 88%;
+    transition: all .3s ease;
+}
+#login-input:focus{
+    border-radius: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+#login-input-block{
+    margin: 40px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+#login-input-block > button{
+    width: 10%;
+    background-color: rgba(255, 255, 255, 0.12);
+    font-size: 18px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: all .3s ease;
+}
+#login-input-block > button:hover{
+    border-radius: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+#water-mark{
+    text-align: right;
+    margin: 40px 0 0 0;
+}
+#login-error{
+    color: red;
+    margin: 10px 0 0 0;
+}
+
+/*CONTROL MENU*/
+#control-menu{
+    width: 95%;
+    background-color: #181818;
+    margin: 20px auto;
+    padding: 10px 20px;
+    border-radius: 15px;
+}
+#control-content{
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+#control-presets{
+    width: 20%;
+}
+.control-preset{
+    background-color: rgba(255, 255, 255, 0.1);
+    text-align: center;
+    padding: 6px 2px;
+    transition: .3s ease all;
+    margin: 5px 0;
+}
+.control-preset:hover{
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+#control-edit{
+    width: 79%;
+}
+#control-endpoint-input{
+    outline: none;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    font-size: 18px;
+    border-radius: 5px;
+    width: 90%;
+    padding: 4px 4px 4px 2px;
+}
+#control-method-input{
+    outline: none;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    font-size: 18px;
+    border-radius: 5px;
+    width: 20%;
+    padding: 4px 4px 4px 2px;
+    margin: 10px 0;
+}
+#control-body-input{
+    outline: none;
+    border: none;
+    display: block;
+    background-color: rgba(255, 255, 255, 0.3);
+    font-size: 18px;
+    border-radius: 5px;
+    width: 100%;
+    padding: 4px 4px 4px 2px;
+    margin: 10px 0;
+    resize: none;
+    height: 200px;
+}
+#control-submit{
+    width: 10%;
+    background-color: rgba(255, 255, 255, 0.12);
+    font-size: 18px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: all .3s ease;
+}
+#control-submit:hover{
+    border-radius: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
