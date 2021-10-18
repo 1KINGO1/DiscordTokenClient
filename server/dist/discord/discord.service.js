@@ -13,12 +13,22 @@ let DiscordService = class DiscordService {
     async sendRequest(endpoint, body, method, token) {
         let result = false;
         try {
-            let { data } = await axios_1.default[method](endpoint.startsWith('/') ? `https://discord.com/api/v9${endpoint}` : `https://discord.com/api/v9/${endpoint}`, JSON.parse(body), {
-                headers: {
-                    authorization: token
-                }
-            });
-            result = true;
+            if (method == "get") {
+                let { data } = await axios_1.default[method](endpoint.startsWith('/') ? `https://discord.com/api/v9${endpoint}` : `https://discord.com/api/v9/${endpoint}`, {
+                    headers: {
+                        authorization: token
+                    }
+                });
+                result = data;
+            }
+            else {
+                let { data } = await axios_1.default[method](endpoint.startsWith('/') ? `https://discord.com/api/v9${endpoint}` : `https://discord.com/api/v9/${endpoint}`, JSON.parse(body), {
+                    headers: {
+                        authorization: token
+                    }
+                });
+                result = data;
+            }
         }
         catch (e) {
             result = false;

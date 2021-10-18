@@ -10,16 +10,27 @@ export class DiscordService {
                       token: string){
 
 
-        let result = false;
+        let result: any = false;
         try{
-            let {data} = await axios[method](endpoint.startsWith('/') ? `https://discord.com/api/v9${endpoint}` : `https://discord.com/api/v9/${endpoint}`,
-                JSON.parse(body)
-                , {
-                headers: {
-                    authorization: token
-                }
-            });
-            result = true
+            if (method == "get"){
+                let {data} = await axios[method](endpoint.startsWith('/') ? `https://discord.com/api/v9${endpoint}` : `https://discord.com/api/v9/${endpoint}`,
+                    {
+                        headers: {
+                            authorization: token
+                        }
+                    });
+                result = data
+            }
+            else{
+                let {data} = await axios[method](endpoint.startsWith('/') ? `https://discord.com/api/v9${endpoint}` : `https://discord.com/api/v9/${endpoint}`,
+                    JSON.parse(body)
+                    , {
+                        headers: {
+                            authorization: token
+                        }
+                    });
+                result = data
+            }
         }
         catch (e){
             result = false;

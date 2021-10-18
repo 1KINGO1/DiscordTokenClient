@@ -20,6 +20,7 @@ export default function ControlPage(){
     let [bodyJsonError, setBodyJsonError] = useState('');
     let [result, setResult] = useState('')
 
+    let [response, setResponse] = useState("");
 
     let loginToken = useSelector(state => state.login.loginToken);
 
@@ -27,18 +28,19 @@ export default function ControlPage(){
         let {data} = await axios.post('http://localhost:3001/api/discord/send', {
             endpoint: endPoint,
             token: loginToken,
-            method: method,
+            method: method.toLowerCase(),
             body: body
         })
         if (data.err){
-            alert(data.mes);
+            setResponse(data.mes);
             return
         }
         else{
             setResult("Completed!")
+            setResponse(JSON.stringify(data.res))
             setTimeout(() => {
                 setResult('');
-            }, 1000)
+            }, 3000)
         }
     }
 
@@ -101,6 +103,12 @@ export default function ControlPage(){
                         onChange={(e) => setBody(e.target.value)}
                         value={body}
                         style={bodyJsonError ? {border: "2px solid red"} : {}}
+                    />
+                    <textarea
+                        id='control-body-response'
+                        placeholder='Response body'
+                        disabled='true'
+                        value={response}
                     />
                     <button id='control-submit' onClick={submitHandler}>Send <span style={{color: 'green'}}>{result}</span></button>
                 </div>

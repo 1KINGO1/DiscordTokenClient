@@ -24,11 +24,29 @@ let DiscordController = class DiscordController {
         this.discordService = discordService;
     }
     async sendRequest(req, res, endpoint, token, body, method) {
-        if (!endpoint || !token || !body || !method) {
-            res.send(new Error('Request must include "endpoint", "token", "body", "method"'));
+        if (!endpoint) {
+            res.send(new Error('Request must include correct "endpoint"'));
             return;
         }
-        res.send(await this.discordService.sendRequest(endpoint, body, method, token) ? { err: false } : new Error('Something error :('));
+        if (body) {
+            try {
+                JSON.parse(body);
+            }
+            catch (e) {
+                res.send(new Error('Request must include correct "body" in JSON format'));
+                return;
+            }
+        }
+        if (method !== "post" &&
+            method !== "get" &&
+            method !== "patch" &&
+            method !== "put" &&
+            method !== "delete") {
+            res.send(new Error('Request must include correct "method"'));
+            return;
+        }
+        let resp = await this.discordService.sendRequest(endpoint, body, method, token);
+        res.send(resp ? { err: false, res: resp } : new Error('Something error :('));
     }
 };
 __decorate([
