@@ -1,6 +1,8 @@
 # DiscordTokenClient
 A convenient utility that allows you to manage your discord account through a token
 
+<a href="https://github.com/1KINGO1/RegularBot">How to get Client Token</a>
+
 ##Starting
 ```
 npm run start:client
