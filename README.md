@@ -21,3 +21,6 @@ Preview | 😱
 -------------------------
 <img alt="example image" src="https://media.discordapp.net/attachments/688663384727748668/900478197425135656/Screenshot_2.png?width=1440&height=194"/>
 <img src="https://media.discordapp.net/attachments/688663384727748668/900478199228665856/Screenshot_3.png?width=1440&height=545" alt="image2">
+=======
+<img alt="example image" src="https://media.discordapp.net/attachments/688663384727748668/899336962731802724/Screenshot_1.png?width=1440&height=411"/>
+>>>>>>> b03e3c74d710d41fb7d386142a3fe34b8a707fd8
