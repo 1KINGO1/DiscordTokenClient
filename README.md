@@ -2,6 +2,8 @@ DiscordTokenClient
 ========================
 A convenient utility that allows you to manage your discord account through a token
 
+A way for you to manage your own or someone else's discord account with just one token. This way you can create a bot on a regular discord account.
+
 Starting | 🍉
 -------------------------
 ```
